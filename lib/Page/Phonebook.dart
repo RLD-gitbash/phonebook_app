@@ -59,19 +59,25 @@ class _MainPageState extends State<MainPage> {
         centerTitle: true,
         title: Text("Phone Book"),
         leading: add(context),
+        backgroundColor: Colors.deepOrangeAccent,
+
       ),
       body: dataList(),
-      floatingActionButton: FloatingActionButton(child: Icon(Icons.wifi_protected_setup),onPressed: ()=>{Navigator.pushReplacement(
+      floatingActionButton: FloatingActionButton(child: Icon(Icons.refresh),onPressed: ()=>{Navigator.pushReplacement(
           context,
+       
           MaterialPageRoute(
               builder: (BuildContext context) => super.widget))},),
+
+    
+
     );
   }
 
   Widget dataList() {
     // If no data
     if (data.contains(null) || data.length < 0 || isLoading){
-      return Center(child: CircularProgressIndicator(valueColor: new AlwaysStoppedAnimation<Color>(Colors.red),),);
+      return Center(child: CircularProgressIndicator(valueColor: new AlwaysStoppedAnimation<Color>(Colors.deepOrangeAccent),),);
     }
     return ListView.builder(
       itemCount: data.length,

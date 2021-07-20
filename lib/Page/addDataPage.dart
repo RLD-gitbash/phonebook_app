@@ -18,10 +18,16 @@ class add_new extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Adding new Contact",
+          "Add Contact #",
           style: TextStyle(fontWeight: FontWeight.bold),
+          
         ),
+        backgroundColor: Colors.orange.shade800,
+       
+
       ),
+
+
       body: input(context),
     );
   }
@@ -48,10 +54,12 @@ Widget input(BuildContext context) {
                 width: 340,
                 child: TextField(
                   decoration: InputDecoration(
-                      icon: PhoneIcon(context),
+                      icon:Icon (Icons.mail_rounded),
+                     
                       hintText: "Phone number",
                       hintStyle: TextStyle(color: Colors.grey)),
                   controller: controllerThree,
+                 
                 ),
               ),
             ],
@@ -63,6 +71,7 @@ Widget input(BuildContext context) {
             Container(
               child: ConstrainedBox(
                 constraints: BoxConstraints.tightFor(width: 400,height: 30),
+                
                 child: ElevatedButton(
                   onPressed: (){
                     //get value from the text
@@ -80,8 +89,10 @@ Widget input(BuildContext context) {
                     popupDialog(context);
 
                   },
-                  child: Text("Add"),
-                  style: ElevatedButton.styleFrom(primary: Colors.pink),
+                  child: Text("Add contact"),
+                  
+                  style: ElevatedButton.styleFrom(primary: Colors.deepOrangeAccent),
+                  
                 ),
               ),
             ),
@@ -99,8 +110,8 @@ Widget insertName(BuildContext context) {
     children: [
       Container(
           padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
-          child: personIcon(context)),
-
+        ),
+ //child: personIcon(context)
       SizedBox(width: 17),
       //name
       Container(
@@ -110,12 +121,16 @@ Widget insertName(BuildContext context) {
             children: [
               TextField(
                   decoration: InputDecoration(
+                     icon:Icon (Icons.person_pin_circle),
                       hintText: "First name",
                       hintStyle: TextStyle(color: Colors.grey[600])),
               controller: controllerOne,
+              
+              
               ),
               TextField(
                   decoration: InputDecoration(
+                      icon:Icon (Icons.person_pin_circle),
                       hintText: "Last name",
                       hintStyle: TextStyle(color: Colors.grey[600])),
               controller: controllerTwo,
@@ -127,11 +142,11 @@ Widget insertName(BuildContext context) {
 }
 
 Widget personIcon(BuildContext context){
-  return Icon(Icons.person_add, color: Colors.pink);
+  return Icon(Icons.person_add, color: Colors.green.shade800);
 }
 
 Widget PhoneIcon(BuildContext context){
-  return Icon(Icons.phone,color: Colors.pink);
+  return Icon(Icons.phone,color: Colors.green.shade800);
 }
 
 Widget popupDialog(BuildContext context){
